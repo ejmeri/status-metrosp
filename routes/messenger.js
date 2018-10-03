@@ -5,7 +5,7 @@ var router = require('express').Router();
 var Messenger = require('../services/messenger');
 
 router.get('/', (req, res) => {
-    res.send('Olá Mundo!');
+    res.send('Bem vindo ao chat bot do metro de SP!');
 });
 
 router.get('/webhook', function (req, res) {
