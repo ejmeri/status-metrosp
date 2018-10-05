@@ -19,6 +19,8 @@ router.get('/webhook', function (req, res) {
 router.post('/webhook', async function (req, res) {
     var text = 'Erro';
 
+    var data = req.body;
+    
     if (data && data.object == 'page') {
         data.entry.forEach(function (entry) {
             var pageId = entry.id;
