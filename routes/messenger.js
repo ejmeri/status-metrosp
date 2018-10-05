@@ -39,7 +39,7 @@ router.post('/webhook', async function (req, res) {
                         var payload = event.postback.payload;
 
                         if (payload == 'GET_STARTED_PAYLOAD')
-                            Messenger.sendTextMessage(event.sender.id, 'Olá, tudo bem? Para ver o status de alguma linha utitlize o menu :D');
+                            Messenger.sendTextMessage(event.sender.id, 'Olá, tudo bem? Para ver o status de alguma linha utilize o menu :D');
                         else if (payload == 'HELP_PAYLOAD')
                             Messenger.sendTextMessage(event.sender.id, 'Olá, sou o Metro Fácil :)\n\nPara ver o status de alguma linha utitlize o menu :D');
                         else {
