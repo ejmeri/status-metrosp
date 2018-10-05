@@ -28,6 +28,8 @@ router.post('/webhook', async function (req, res) {
             var pageId = entry.id;
             var timeOfevent = entry.time;
 
+            console.log(entry + " ENTRY");
+
             // percorrer todas as mensagens
             entry.messaging.forEach(async function (event) {
 
