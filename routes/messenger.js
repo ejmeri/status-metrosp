@@ -5,7 +5,7 @@ var router = require('express').Router();
 var Messenger = require('../services/messenger');
 
 router.get('/', (req, res) => {
-    res.send('Bem vindo ao chat bot do metro de SP!');
+    res.send('Olá Mundo!');
 });
 
 router.get('/webhook', function (req, res) {
@@ -37,7 +37,7 @@ router.post('/webhook', async function (req, res) {
                         if (payload == 'GET_STARTED_PAYLOAD')
                             Messenger.sendTextMessage(event.sender.id, 'Olá, tudo bem? Para ver o status de alguma linha utitlize o menu :D');
                         else if (payload == 'HELP_PAYLOAD')
-                            Messenger.sendTextMessage(event.sender.id, 'Olá, sou o Metrozera :)\n\nPara ver o status de alguma linha utitlize o menu :D');
+                            Messenger.sendTextMessage(event.sender.id, 'Olá, sou o Metro Fácil :)\n\nPara ver o status de alguma linha utitlize o menu :D');
                         else {
                             if (payload == 'Lilas')
                                 payload = payload.replace('a', 'á');
