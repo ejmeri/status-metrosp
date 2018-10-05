@@ -34,6 +34,9 @@ router.post('/webhook', async function (req, res) {
                     trataMessage(event);
                 } else {
                     if (event.postback && event.postback.payload) {
+
+                        console.log(event);
+                        
                         var payload = event.postback.payload;
 
                         if (payload == 'GET_STARTED_PAYLOAD')
@@ -68,6 +71,4 @@ router.post('/webhook', async function (req, res) {
 
 });
 
-module.exports = app => {
-    app.use('/messenger/', router);
-}
+module.exports = app =>  app.use('/messenger/', router);
