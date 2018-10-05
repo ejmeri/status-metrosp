@@ -17,11 +17,7 @@ router.get('/webhook', function (req, res) {
 });
 
 router.post('/webhook', async function (req, res) {
-
     var text = 'Erro';
-
-    console.log(req.body + " body");
-    var data = req.body;
 
     if (data && data.object == 'page') {
         data.entry.forEach(function (entry) {
@@ -36,7 +32,7 @@ router.post('/webhook', async function (req, res) {
                 } else {
                     if (event.postback && event.postback.payload) {
 
-                       
+
 
                         var payload = event.postback.payload;
 
@@ -72,4 +68,4 @@ router.post('/webhook', async function (req, res) {
 
 });
 
-module.exports = app =>  app.use('/messenger/', router);
+module.exports = app => app.use('/messenger/', router);
