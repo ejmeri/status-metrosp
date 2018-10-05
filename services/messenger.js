@@ -90,6 +90,7 @@ function callSendApi(messageData) {
         if (err) {
             console.log(err);
         } else if (res.statusCode == 200) {
+            console.log(req);
             console.log(`Message sended. to ${body.recipient_id}`);
             var recipientId = body.recipient_id;
             var messageId = body.message_id;
