@@ -30,13 +30,16 @@ router.post('/webhook', async function (req, res) {
 
             // percorrer todas as mensagens
             entry.messaging.forEach(async function (event) {
+
+                console.log(event);
+
                 if (event.message) {
                     trataMessage(event);
                 } else {
                     if (event.postback && event.postback.payload) {
 
-                        console.log(event);
-                        
+                       
+
                         var payload = event.postback.payload;
 
                         if (payload == 'GET_STARTED_PAYLOAD')
