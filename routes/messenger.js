@@ -19,21 +19,17 @@ router.get('/webhook', function (req, res) {
 router.post('/webhook', async function (req, res) {
 
     var text = 'Erro';
-    var data = req.body;
 
-    console.log(data);
+    console.log(req.body + " body");
+    var data = req.body;
 
     if (data && data.object == 'page') {
         data.entry.forEach(function (entry) {
             var pageId = entry.id;
             var timeOfevent = entry.time;
 
-            console.log(entry + " ENTRY");
-
             // percorrer todas as mensagens
             entry.messaging.forEach(async function (event) {
-
-                console.log(event);
 
                 if (event.message) {
                     trataMessage(event);
